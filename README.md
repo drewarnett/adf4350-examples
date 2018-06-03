@@ -48,6 +48,12 @@ Arduino sketches (.ino files) are provided per the 'example registers.csv'
 spreadsheet.  The examples were created for a group build of W1GHZ
 transverters for 2.4, 3.5, 5.7, and 10 GHz.
 
+example4
+--------
+This provides the list of frequencies from example3, but in a single sketch.
+A set of switches selects the band.  Another switch, that is read at power
+up or after reset, decides if the frequency switches are continuously active.
+This was also created for the group build of transverters.
 
 References
 ----------

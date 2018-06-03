@@ -29,12 +29,13 @@ Switch connections
 ------------------
 Arduino UNO connector pins D2 to D6 are used.  No connect = open = 1.  Short to ground = closed = 0.
 
-D5	D4	D3	D2
-open	open	open	open	10368_144_low_x3_3408
-open	open	open	closed	5760_144_low_x2_2808
-open	open	closed	open	3456_144_low_x1_3312
-open	closed	open	open	3400_144_low_x1_3256
-closed	open	open	open	2304_144_low_x1_2160
+D5     | D4     | D3     | D2     | configuration
+-------|--------|--------|--------|--------------
+open   | open   | open   | open   | 10368_144_low_x3_3408
+open   | open   | open   | closed | 5760_144_low_x2_2808
+open   | open   | closed | open   | 3456_144_low_x1_3312
+open   | closed | open   | open   | 3400_144_low_x1_3256
+closed | open   | open   | open   | 2304_144_low_x1_2160
 
 D6
  * open - read the frequency switches once at power up
@@ -48,13 +49,13 @@ On power up or after reset, the Arduino will:
  * delay 1 s
  * sample D6
  * if D6 open:
- ** read the switches
- ** program the synthesizer
- ** stop
+   * read the switches
+   * program the synthesizer
+   * stop
  * else:
- ** do forever:
- *** read the switches
- *** program the synthesizer
+   * do forever:
+     * read the switches
+     * program the synthesizer
 
 
 How to program your Arduino
