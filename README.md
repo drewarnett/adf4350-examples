@@ -40,6 +40,15 @@ Customize:  switch connection.  Switch is placed between a digital pin and
 ground.
 
 
+example3
+--------
+Like example1, this programs the synthesizer once on power up or when the
+microcontroller comes out of reset.  In this case, a collection of
+Arduino sketches (.ino files) are provided per the 'example registers.csv'
+spreadsheet.  The examples were created for a group build of W1GHZ
+transverters for 2.4, 3.5, 5.7, and 10 GHz.
+
+
 References
 ----------
 http://www.analog.com/en/products/rf-microwave/pll-synth/adf4350.html
