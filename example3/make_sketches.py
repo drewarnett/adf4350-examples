@@ -92,7 +92,9 @@ if __name__ == "__main__":
     TEMPLATE = open("template.txt").read()
 
     for configuration in REGISTER_INFO:
-        fn = configuration + ".ino"
-        print(fn)
+        name = "example_" + configuration
+        print(name)
+        fn = os.path.join(name, name + ".ino")
+        os.mkdir(name)
         with open(fn, "w") as ofh:
             ofh.writelines(fillout(TEMPLATE, REGISTER_INFO[configuration]))
