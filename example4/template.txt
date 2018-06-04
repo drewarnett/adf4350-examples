@@ -75,15 +75,21 @@ void setup_ports() {
   pinMode(FREQ_SWITCH_PIN_0, INPUT_PULLUP);
 }
 
+int read_switch(int pin) {
+  int value;
+  value = digitalRead(pin);
+  return !value;
+}
+
 int read_reread_switch() {
   int sample1;
   int sample2;
   int sample3;
 
   for (;;) {
-    sample1 = digitalRead(REREAD_SWITCH_PIN);
-    sample2 = digitalRead(REREAD_SWITCH_PIN);
-    sample3 = digitalRead(REREAD_SWITCH_PIN);
+    sample1 = read_switch(REREAD_SWITCH_PIN);
+    sample2 = read_switch(REREAD_SWITCH_PIN);
+    sample3 = read_switch(REREAD_SWITCH_PIN);
     if (sample1 == sample2 && sample2 == sample3) break;
   }
   return sample1;
@@ -92,10 +98,10 @@ int read_reread_switch() {
 int read_freq_switches_once() {
   int sample;
   sample = (
-      (digitalRead(FREQ_SWITCH_PIN_3) << 3)
-      | (digitalRead(FREQ_SWITCH_PIN_2) << 2)
-      | (digitalRead(FREQ_SWITCH_PIN_1) << 1)
-      | (digitalRead(FREQ_SWITCH_PIN_0) << 0));
+      (read_switch(FREQ_SWITCH_PIN_3) << 3)
+      | (read_switch(FREQ_SWITCH_PIN_2) << 2)
+      | (read_switch(FREQ_SWITCH_PIN_1) << 1)
+      | (read_switch(FREQ_SWITCH_PIN_0) << 0));
   return sample;
 }
 
