@@ -57,6 +57,13 @@ A set of switches selects the band.  Another switch, that is read at power
 up or after reset, decides if the frequency switches are continuously active.
 This was also created for the group build of transverters.
 
+example5
+--------
+Contains sketches for:
+[simple-microwave-radios](https://github.com/drewarnett/simple-microwave-radios/wiki).  This project uses the ADF4350 as a simple QRP transmitter on 1.2 and 10
+GHz.  Should be possible to apply on other bands as well or use for a
+propagation beacon.
+
 References
 ----------
 http://www.analog.com/en/products/rf-microwave/pll-synth/adf4350.html
