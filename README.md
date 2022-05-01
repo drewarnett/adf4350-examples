@@ -7,7 +7,9 @@ The ADF4350 has 6 registers behind a simple shift register interface.
 
 WARNING:  Take care interfacing the microcontroller to the ADF4350 due to
 likely differences in the digital signal voltage levels.  It is almost certain
-that level shifting will have to be done.
+that level shifting will have to be done unless you choose a microcontroller
+that has the same digital signal voltage levels.  We used an Uno clone that
+had a 3.3 V I/O option and avoided the need for extra level shifters.
 
 So far, these examples are very simplistic.  With Analog Devices evaluation
 software, however, they may be all you need.  More complicated examples will
